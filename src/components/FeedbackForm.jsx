@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
-import Button from "./Button";
+import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 import FormText from "./FormText";
 import FeedbackContext from "../context/FeedbackContext";
@@ -45,7 +44,7 @@ export default function FeedbackForm() {
     e.preventDefault();
     if (text.trim().length > 10 && selectedNumber) {
       const newFeedback = {
-        id: feedback.id || uuidv4(),
+        id: feedback.id,
         rating: selectedNumber,
         text: text,
       };
